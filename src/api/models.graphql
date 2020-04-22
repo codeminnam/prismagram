@@ -8,8 +8,8 @@ type User {
   bio: String
   followers: [User!]!
   following: [User!]!
-  amIFollowing: Boolean!
-  itsMe: Boolean!
+  isFollowing: Boolean!
+  isSelf: Boolean!
   posts: [Post!]!
   likes: [Like!]!
   comments: [Comment!]!
