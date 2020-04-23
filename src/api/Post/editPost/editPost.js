@@ -16,9 +16,7 @@ export default {
                         {data:{caption, location}, where: {id}}
                     );
                 }else if(action === DELETE){
-                    return prisma.deletePost(
-                        {where: {id}}
-                    );
+                    return prisma.deletePost({id});
                 }else {
                     return Error("You're not allowed to do such action");
                 }
