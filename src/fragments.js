@@ -1,6 +1,7 @@
 export const USER_FRAGMENT = `
     id
     username
+    avatar
 `;
 
 export const COMMENT_FRAGMENT = `
@@ -14,6 +15,17 @@ export const COMMENT_FRAGMENT = `
 export const FILE_FRAGMENT = `
     id
     url
+`;
+
+export const MESSAGE_FRAGMENT = `
+    id
+    from{
+        ${USER_FRAGMENT}
+    }
+    to{
+        ${USER_FRAGMENT}
+    }
+    text
 `;
 
 export const FULL_POST_FRAGMENT = `
@@ -35,7 +47,11 @@ export const ROOM_FRAGMENT = `
     fragment RoomParts on Room{
         id
         participants {
-            id
+            ${USER_FRAGMENT}
+        }
+        messages{
+            ${MESSAGE_FRAGMENT}
         }
     }
 `;
+
